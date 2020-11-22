@@ -10,7 +10,7 @@ export class SplitwiseUtils {
   }
 
   static filterPastExpenses = (expense: Splitwise.Expense) => {
-    return new Date(expense.created_at) < START_TIME;
+    return new Date(expense.created_at) > START_TIME;
   };
 
   static filterPayments = (expense: Splitwise.Expense) => {
