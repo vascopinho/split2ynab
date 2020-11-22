@@ -10,7 +10,7 @@
     "postinstall": "npm run build",
     "build": "tsc",
     "start": "node dist/index.js",
-    "deploy": "git push heroku master",
+    "deploy": "git push heroku HEAD:master",
     "local": "npm run build && npm run start"
   },
   "author": "",
