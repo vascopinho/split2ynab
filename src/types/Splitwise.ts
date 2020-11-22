@@ -1,4 +1,4 @@
-declare module Splitwise {
+export namespace Splitwise {
   export interface Repayment {
     from: number;
     to: number;

@@ -1,11 +1,25 @@
 import eventHandlerInst, { EventHandler } from "./EventHandler";
+import { CronJob } from "cron";
 
 export class Scheduler {
-  constructor(private readonly eventHandler: EventHandler = eventHandlerInst) {}
+  private cronJob: CronJob;
+
+  constructor(private readonly eventHandler: EventHandler = eventHandlerInst) {
+    this.cronJob = new CronJob("*/15 * * * *", async () => {
+      try {
+        console.log(`Running cron at: ${new Date()}`);
+        await this.eventHandler.runHandler();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
 
   public async initScheduler() {
-    const result = await this.eventHandler.initHandler();
-    console.log(result);
+    // Start job
+    if (!this.cronJob.running) {
+      this.cronJob.start();
+    }
   }
 }
 

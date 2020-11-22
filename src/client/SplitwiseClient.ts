@@ -1,18 +1,21 @@
 import Axios, { AxiosInstance } from "axios";
+import { config } from "dotenv/types";
+import { appConfig } from "../config/AppConfig";
+import { Splitwise } from "../types/Splitwise";
 
 export class SplitwiseClient {
   private axiosClient: AxiosInstance;
 
   constructor() {
     this.axiosClient = Axios.create({
-      baseURL: process.env.SPLITWISE_BASE_URL,
+      baseURL: appConfig.SPLITWISE.baseUrl,
       headers: {
-        Authorization: `Bearer ${process.env.SPLITWISE_API_KEY}`,
+        Authorization: `Bearer ${appConfig.SPLITWISE.apiKey}`,
       },
     });
   }
 
-  public async getTransactions(): Promise<Splitwise.ExpensesResponse> {
+  public async getExpenses(): Promise<Splitwise.ExpensesResponse> {
     return (await this.axiosClient.get("/get_expenses")).data;
   }
 }
