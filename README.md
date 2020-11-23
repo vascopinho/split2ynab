@@ -6,6 +6,8 @@ Node.js application that syncs Splitwise shared expenses to YNAB accounts.
 
 The app runs as a cron job every _x_ minutes, and retrieves expenses on a Splitwise group and parses the expense info in order to be provided to YNAB API. Transactions show up on YNAB as uncleared, uncategorized and unapproved in order to be manually processed and categorized as a second step.
 
+When you have a new expense on splitwise where you owe money (who you are is based on the user id provided), it will be introduced as an outflow. If you are owed, then it's treated as an inflow.
+
 ## Run
 
 for local run: `npm run local`
