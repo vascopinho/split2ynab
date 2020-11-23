@@ -7,7 +7,7 @@ export const appConfig: AppConfig = {
     accountId: process.env.YNAB_ACCOUNT_ID,
     payeeId: process.env.YNAB_PAYEE_ID,
     apiKey: process.env.YNAB_API_KEY,
-    uncathegorizedId: process.env.YNAB_UNCATHEGORIZED_ID,
+    uncathegorizedId: process.env.YNAB_UNCATEGORIZED_ID,
   },
   SPLITWISE: {
     baseUrl: process.env.SPLITWISE_BASE_URL,
