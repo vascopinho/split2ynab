@@ -1,7 +1,6 @@
 import Axios, { AxiosInstance } from "axios";
-import { config } from "dotenv/types";
 import { appConfig } from "../config/AppConfig";
-import { Splitwise } from "../types/Splitwise";
+import { ExpensesResponse } from "../types/Splitwise";
 
 export class SplitwiseClient {
   private axiosClient: AxiosInstance;
@@ -15,7 +14,7 @@ export class SplitwiseClient {
     });
   }
 
-  public async getExpenses(): Promise<Splitwise.ExpensesResponse> {
+  public async getExpenses(): Promise<ExpensesResponse> {
     return (await this.axiosClient.get("/get_expenses")).data;
   }
 }

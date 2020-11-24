@@ -1,16 +1,17 @@
 import eventHandlerInst, { EventHandler } from "./EventHandler";
 import { CronJob } from "cron";
+import logger from "../utils/Logger";
 
 export class Scheduler {
   private cronJob: CronJob;
 
   constructor(private readonly eventHandler: EventHandler = eventHandlerInst) {
-    this.cronJob = new CronJob("*/15 * * * *", async () => {
+    this.cronJob = new CronJob("*/1 * * * *", async () => {
       try {
-        console.log(`Running cron at: ${new Date()}`);
+        logger.info(`Running cron`);
         await this.eventHandler.runHandler();
       } catch (e) {
-        console.error(e);
+        logger.error(e);
       }
     });
   }

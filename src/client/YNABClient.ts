@@ -1,7 +1,7 @@
 import Axios, { AxiosInstance } from "axios";
 import { appConfig } from "../config/AppConfig";
-import { Splitwise } from "../types/Splitwise";
-import { YNAB } from "../types/YNAB";
+import { YNABTransactionRequest } from "../types/YNAB";
+import logger from "../utils/Logger";
 
 export class YNABClient {
   private axiosClient: AxiosInstance;
@@ -15,16 +15,14 @@ export class YNABClient {
     });
   }
 
-  public async createTransaction(transaction: YNAB.YNABTransactionRequest) {
+  public async createTransaction(transaction: YNABTransactionRequest) {
     try {
       const result = await this.axiosClient.post(
         `/budgets/${appConfig.YNAB.budgetId}/transactions`,
         transaction
       );
-
-      console.log(result.data);
     } catch (error) {
-      console.log(JSON.stringify(error));
+      logger.error(error);
     }
   }
 }

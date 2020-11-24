@@ -1,11 +1,11 @@
 import { appConfig } from "../config/AppConfig";
-import { Splitwise } from "../types/Splitwise";
-import { YNAB } from "../types/YNAB";
+import { Expense, User } from "../types/Splitwise";
+import { YNABTransactionRequest } from "../types/YNAB";
 
 export class YNABUtils {
   static buildYNABInfoFromSplitwiseExpense(
-    expense: Splitwise.Expense
-  ): YNAB.YNABTransactionRequest {
+    expense: Expense
+  ): YNABTransactionRequest {
     return {
       transaction: {
         account_id: appConfig.YNAB.accountId,
@@ -21,12 +21,12 @@ export class YNABUtils {
     };
   }
 
-  static mapToYNABAmount(expense: Splitwise.Expense) {
+  static mapToYNABAmount(expense: Expense) {
     const myPart = this.filterMyUser(expense.users);
     return +myPart.net_balance * 1000;
   }
 
-  static filterMyUser(users: Splitwise.User[]) {
-    return users.filter((u) => u.user_id === +process.env.SPLITWISE_USER_ID)[0];
+  static filterMyUser(users: User[]) {
+    return users.filter((u) => u.user_id === +appConfig.SPLITWISE.userId)[0];
   }
 }
