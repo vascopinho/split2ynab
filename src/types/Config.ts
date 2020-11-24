@@ -12,4 +12,5 @@ export interface AppConfig {
     apiKey: string;
     userId: string;
   };
+  CRON_FREQUENCY: string;
 }

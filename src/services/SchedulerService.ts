@@ -1,19 +1,23 @@
 import eventHandlerInst, { EventHandler } from "./EventHandler";
 import { CronJob } from "cron";
 import logger from "../utils/Logger";
+import { appConfig } from "../config/AppConfig";
 
 export class Scheduler {
   private cronJob: CronJob;
 
   constructor(private readonly eventHandler: EventHandler = eventHandlerInst) {
-    this.cronJob = new CronJob("*/1 * * * *", async () => {
-      try {
-        logger.info(`Running cron`);
-        await this.eventHandler.runHandler();
-      } catch (e) {
-        logger.error(e);
+    this.cronJob = new CronJob(
+      `*/${appConfig.CRON_FREQUENCY} * * * *`,
+      async () => {
+        try {
+          logger.info(`Running cron`);
+          await this.eventHandler.runHandler();
+        } catch (e) {
+          logger.error(e);
+        }
       }
-    });
+    );
   }
 
   public async initScheduler() {

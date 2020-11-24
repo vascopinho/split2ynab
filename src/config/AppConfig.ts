@@ -14,4 +14,5 @@ export const appConfig: AppConfig = {
     apiKey: process.env.SPLITWISE_API_KEY,
     userId: process.env.SPLITWISE_USER_ID,
   },
+  CRON_FREQUENCY: process.env.CRON_FREQUENCY || "15",
 };
