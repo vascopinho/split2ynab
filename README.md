@@ -40,6 +40,17 @@ YNAB_ACCOUNT_ID - your YNAB account ID
 YNAB_PAYEE_ID - the default Payee ID you want to assign to your transactions
 YNAB_API_KEY - YNAB API key, generated on account's developer settings
 YNAB_UNCATEGORIZED_ID - YNAB "Needs categorization" ID, it's a master category that you can retrieve via YNAB's API, not sure if ID is general or per user.
+
+CRON_FREQUENCY - how often to run the sync if you're deploying it to Heroku
+START_DATE - date when to start pulling in transactions from (e.g: 2020-11-01)
+DEBUG - set to 'axios' to see more verbose logs
+```
+
+Put these variables in `.env` and then you can run this locally with:
+
+```
+source .env
+npm run local
 ```
 
 ### How to get these variables easily

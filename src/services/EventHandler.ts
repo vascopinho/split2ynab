@@ -15,6 +15,8 @@ export class EventHandler {
 
   public async runHandler() {
     const result = await this.splitwiseClient.getExpenses();
+    logger.info(`Found ${result.expenses.length} expenses!`);
+
     SplitwiseUtils.getExpensesToHandle(result.expenses)
       .filter((e) => !this.processedIds.includes(e.id))
       .map((e) => YNABUtils.buildYNABInfoFromSplitwiseExpense(e))

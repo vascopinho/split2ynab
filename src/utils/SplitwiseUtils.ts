@@ -1,5 +1,5 @@
-import { START_TIME } from "..";
 import { Expense } from "../types/Splitwise";
+import { appConfig } from "../config/AppConfig";
 
 export class SplitwiseUtils {
   static getExpensesToHandle(expenses: Expense[]) {
@@ -10,7 +10,7 @@ export class SplitwiseUtils {
   }
 
   static filterPastExpenses = (expense: Expense) => {
-    return new Date(expense.created_at) > START_TIME;
+    return new Date(expense.created_at) > appConfig.START_DATE;
   };
 
   static filterPayments = (expense: Expense) => {

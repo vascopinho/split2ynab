@@ -1,6 +1,7 @@
 import Axios, { AxiosInstance } from "axios";
 import { appConfig } from "../config/AppConfig";
 import { ExpensesResponse } from "../types/Splitwise";
+import "axios-debug-log";
 
 export class SplitwiseClient {
   private axiosClient: AxiosInstance;
@@ -15,7 +16,7 @@ export class SplitwiseClient {
   }
 
   public async getExpenses(): Promise<ExpensesResponse> {
-    return (await this.axiosClient.get("/get_expenses")).data;
+    return (await this.axiosClient.get("/get_expenses?limit=100")).data;
   }
 }
 

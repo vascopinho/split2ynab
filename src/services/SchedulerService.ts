@@ -25,6 +25,13 @@ export class Scheduler {
     if (!this.cronJob.running) {
       this.cronJob.start();
     }
+    // Run now!
+    try {
+      logger.info(`Sync now!`);
+      await this.eventHandler.runHandler();
+    } catch (e) {
+      logger.error(e);
+    }
   }
 }
 

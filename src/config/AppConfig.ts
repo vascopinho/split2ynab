@@ -15,4 +15,5 @@ export const appConfig: AppConfig = {
     userId: process.env.SPLITWISE_USER_ID,
   },
   CRON_FREQUENCY: process.env.CRON_FREQUENCY || "15",
+  START_DATE: process.env.START_DATE ? new Date(Date.parse(process.env.START_DATE)) : new Date(),
 };
