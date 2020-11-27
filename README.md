@@ -42,6 +42,34 @@ YNAB_API_KEY - YNAB API key, generated on account's developer settings
 YNAB_UNCATEGORIZED_ID - YNAB "Needs categorization" ID, it's a master category that you can retrieve via YNAB's API, not sure if ID is general or per user.
 ```
 
+### How to get these variables easily
+
+#### `SPLITWISE_USER_ID`
+
+Inspect the `<form>` element on https://secure.splitwise.com/account/settings. The form action points to `/users/SPLITWISE_USER_ID`, copy and paste just the numeric ID out.
+
+#### `YNAB_BUDGET_ID`
+
+Go to your budget in YNAB. It's a UUID:
+
+```
+https://app.youneedabudget.com/11111111-2222-3333-4444-555555555555
+                               ^^^^
+```
+
+#### `YNAB_ACCOUNT_ID`
+
+Go to the account you wish to import transactions for inside of your budget. It's the second UUID inside of your budget:
+
+````
+https://app.youneedabudget.com/11111111-2222-3333-4444-555555555555/accounts/11111111-2222-3333-4444-555555555555
+                                                                             ^^^^
+````
+
+#### `CRON_FREQUENCY`
+
+Set this to `1` for the first import of your transactions. Then set it to `15` or however often you'd like to import things.
+
 ## Docs
 
 - [Splitwise API](https://dev.splitwise.com/#introduction)
