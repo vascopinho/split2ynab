@@ -1,7 +1,6 @@
 import Axios, { AxiosInstance } from "axios";
 import { appConfig } from "../config/AppConfig";
 import { ExpensesResponse } from "../types/Splitwise";
-import "axios-debug-log";
 
 export class SplitwiseClient {
   private axiosClient: AxiosInstance;

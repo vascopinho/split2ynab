@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "axios-debug-log": "^0.8.2",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "winston": "^3.3.3"
