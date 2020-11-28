@@ -43,7 +43,6 @@ YNAB_UNCATEGORIZED_ID - YNAB "Needs categorization" ID, it's a master category t
 
 CRON_FREQUENCY - how often to run the sync in minutes
 START_DATE - date when to start pulling in transactions from (e.g: 2020-11-01)
-DEBUG - set to 'axios' to see more verbose logs
 ```
 
 Put these variables in `.env` and then you can run this locally with:
