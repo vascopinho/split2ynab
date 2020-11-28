@@ -41,7 +41,7 @@ YNAB_PAYEE_ID - the default Payee ID you want to assign to your transactions
 YNAB_API_KEY - YNAB API key, generated on account's developer settings
 YNAB_UNCATEGORIZED_ID - YNAB "Needs categorization" ID, it's a master category that you can retrieve via YNAB's API, not sure if ID is general or per user.
 
-CRON_FREQUENCY - how often to run the sync if you're deploying it to Heroku
+CRON_FREQUENCY - how often to run the sync in minutes
 START_DATE - date when to start pulling in transactions from (e.g: 2020-11-01)
 DEBUG - set to 'axios' to see more verbose logs
 ```
@@ -72,10 +72,10 @@ https://app.youneedabudget.com/11111111-2222-3333-4444-555555555555
 
 Go to the account you wish to import transactions for inside of your budget. It's the second UUID inside of your budget:
 
-````
+```
 https://app.youneedabudget.com/11111111-2222-3333-4444-555555555555/accounts/11111111-2222-3333-4444-555555555555
                                                                              ^^^^
-````
+```
 
 #### `CRON_FREQUENCY`
 
