@@ -1,7 +1,7 @@
-import eventHandlerInst, { EventHandler } from "./EventHandler";
-import { CronJob } from "cron";
-import logger from "../utils/Logger";
-import { appConfig } from "../config/AppConfig";
+import eventHandlerInst, { EventHandler } from './EventHandler';
+import { CronJob } from 'cron';
+import logger from '../utils/Logger';
+import { appConfig } from '../config/AppConfig';
 
 export class Scheduler {
   private cronJob: CronJob;

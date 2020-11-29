@@ -1,15 +1,12 @@
-import Axios from "axios";
-import { AxiosInstance } from "axios";
-import logger from "../utils/Logger";
+import Axios from 'axios';
+import { AxiosInstance } from 'axios';
+import logger from '../utils/Logger';
 
 export abstract class GenericHttpClient {
   protected axiosClient: AxiosInstance;
 
   constructor(baseURL: string, headers: any) {
-    this.axiosClient = Axios.create({
-      baseURL,
-      headers,
-    });
+    this.axiosClient = Axios.create({ baseURL, headers });
     this.axiosClient.interceptors.request.use((x) => {
       logger.info(`REQUEST [${x.method.toUpperCase()}] ${x.baseURL}${x.url}`);
       return x;

@@ -5,6 +5,16 @@
     ],
     "jsRules": {},
     "rules": {
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-pascal-case",
+            "allow-leading-underscore",
+            "allow-snake-case",
+            "allow-trailing-underscore",
+            "require-const-for-all-caps"
+        ]
     },
     "rulesDirectory": []
 }

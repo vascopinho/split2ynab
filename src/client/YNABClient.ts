@@ -1,8 +1,8 @@
-import Axios, { AxiosInstance } from "axios";
-import { appConfig } from "../config/AppConfig";
-import { YNABTransactionRequest } from "../types/YNAB";
-import logger from "../utils/Logger";
-import { GenericHttpClient } from "./GenericHttpClient";
+import Axios, { AxiosInstance } from 'axios';
+import { appConfig } from '../config/AppConfig';
+import { YNABTransactionRequest } from '../types/YNAB';
+import logger from '../utils/Logger';
+import { GenericHttpClient } from './GenericHttpClient';
 
 export class YNABClient extends GenericHttpClient {
   constructor() {

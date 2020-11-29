@@ -1,7 +1,7 @@
-import Axios, { AxiosInstance } from "axios";
-import { appConfig } from "../config/AppConfig";
-import { ExpensesResponse } from "../types/Splitwise";
-import { GenericHttpClient } from "./GenericHttpClient";
+import Axios, { AxiosInstance } from 'axios';
+import { appConfig } from '../config/AppConfig';
+import { ExpensesResponse } from '../types/Splitwise';
+import { GenericHttpClient } from './GenericHttpClient';
 
 export class SplitwiseClient extends GenericHttpClient {
   constructor() {
@@ -11,7 +11,7 @@ export class SplitwiseClient extends GenericHttpClient {
   }
 
   public async getExpenses(): Promise<ExpensesResponse> {
-    return (await this.axiosClient.get("/get_expenses?limit=100")).data;
+    return (await this.axiosClient.get('/get_expenses?limit=100')).data;
   }
 }
 

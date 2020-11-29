@@ -1,4 +1,4 @@
-import * as winston from "winston";
+import * as winston from 'winston';
 
 const myFormat = winston.format.printf(
   ({ level, message, label, timestamp }) => {
@@ -14,7 +14,7 @@ const logger: winston.Logger = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console({
-      level: "info",
+      level: 'info',
     }),
   ],
   exitOnError: false, // do not exit on handled exceptions

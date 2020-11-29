@@ -1,5 +1,5 @@
-import { Expense } from "../types/Splitwise";
-import { appConfig } from "../config/AppConfig";
+import { Expense } from '../types/Splitwise';
+import { appConfig } from '../config/AppConfig';
 
 export class SplitwiseUtils {
   static getExpensesToHandle(expenses: Expense[]) {

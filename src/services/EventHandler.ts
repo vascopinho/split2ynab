@@ -1,10 +1,10 @@
 import splitwiseClientInst, {
   SplitwiseClient,
-} from "../client/SplitwiseClient";
-import ynabClientInst, { YNABClient } from "../client/YNABClient";
-import logger from "../utils/Logger";
-import { SplitwiseUtils } from "../utils/SplitwiseUtils";
-import { YNABUtils } from "../utils/YNABUtils";
+} from '../client/SplitwiseClient';
+import ynabClientInst, { YNABClient } from '../client/YNABClient';
+import logger from '../utils/Logger';
+import { SplitwiseUtils } from '../utils/SplitwiseUtils';
+import { YNABUtils } from '../utils/YNABUtils';
 
 export class EventHandler {
   constructor(

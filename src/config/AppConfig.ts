@@ -1,4 +1,4 @@
-import { AppConfig } from "../types/Config";
+import { AppConfig } from '../types/Config';
 
 export const appConfig: AppConfig = {
   YNAB: {
@@ -14,7 +14,7 @@ export const appConfig: AppConfig = {
     apiKey: process.env.SPLITWISE_API_KEY,
     userId: process.env.SPLITWISE_USER_ID,
   },
-  CRON_FREQUENCY: process.env.CRON_FREQUENCY || "15",
+  CRON_FREQUENCY: process.env.CRON_FREQUENCY || '15',
   START_DATE: process.env.START_DATE
     ? new Date(Date.parse(process.env.START_DATE))
     : new Date(),
