@@ -13,7 +13,7 @@ export class YNABUtils {
         approved: false,
         category_id: appConfig.YNAB.uncathegorizedId,
         cleared: "uncleared",
-        date: new Date().toISOString().slice(0, 10),
+        date: expense.date.toString(),
         import_id: `${expense.id}`,
         memo: expense.description,
         payee_id: appConfig.YNAB.payeeId,

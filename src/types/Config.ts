@@ -13,4 +13,5 @@ export interface AppConfig {
     userId: string;
   };
   CRON_FREQUENCY: string;
+  START_DATE: Date;
 }

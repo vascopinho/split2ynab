@@ -2,16 +2,12 @@ import Axios, { AxiosInstance } from "axios";
 import { appConfig } from "../config/AppConfig";
 import { YNABTransactionRequest } from "../types/YNAB";
 import logger from "../utils/Logger";
+import { GenericHttpClient } from "./GenericHttpClient";
 
-export class YNABClient {
-  private axiosClient: AxiosInstance;
-
+export class YNABClient extends GenericHttpClient {
   constructor() {
-    this.axiosClient = Axios.create({
-      baseURL: appConfig.YNAB.baseUrl,
-      headers: {
-        Authorization: `Bearer ${appConfig.YNAB.apiKey}`,
-      },
+    super(appConfig.YNAB.baseUrl, {
+      Authorization: `Bearer ${appConfig.YNAB.apiKey}`,
     });
   }
 
