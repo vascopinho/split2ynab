@@ -8,14 +8,6 @@ export interface Picture {
   medium: string;
 }
 
-export interface CreatedBy {
-  id: number;
-  first_name: string;
-  last_name?: any;
-  picture: Picture;
-  custom_picture: boolean;
-}
-
 export interface Category {
   id: number;
   name: string;
@@ -64,7 +56,7 @@ export interface Expense {
   repayments: Repayment[];
   date: Date;
   created_at: Date;
-  created_by: CreatedBy;
+  created_by: UserDetails;
   updated_at: Date;
   updated_by?: any;
   deleted_at?: any;
